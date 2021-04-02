@@ -13,20 +13,57 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
+        <nav class="navbar navbar-dark navbar-expand bg-warning text-light">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/icon.png" width=100% height=100% alt="" loading="lazy">
                 <span class="ml-2">Taskr</span>
             </a>
         </nav>
     </header>
+
+
+
+
     <main>
-        <div id="app"></div>
+        <div class="container-fluid" id="app">
+            <div class="row">
+                <div class="col-9">
+
+
+
+                    <form class="bg-white rounded p-3" onsubmit="app.tasksController.addTask()">
+                        <div class="form-group d-flex">
+                            <div>
+                                <label for="title">Task Name</label>
+                                <input type="text" name="name" id="title" class="form-control" placeholder="Task Title..."
+                                    aria-describedby="helpId" required min="2" max="15">
+                            </div>
+                            <div class="ml-3">
+                                <label for="size">Color</label>
+                                <select class="custom-select" id="color" aria-label="size select" required>
+                                    <option value="yellow">Yellow</option>
+                                    <option value="green">Green</option>
+                                    <option value="pink">Pink</option>
+                                    <option value="gold">Gold</option>
+                                    <option value="blue">Blue</option>
+                                    <option selected value="purple">Purple</option>
+                                </select>
+                            </div>
+                            <div class="ml-3 d-flex align-items-end">
+                                <button type="submit" class="btn btn-success" title='add task'>Create</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
     </main>
-    <footer class="container-fluid bg-dark text-light">
+
+    <footer class="container-fluid bg-success text-light">
         <div class="row text-center">
             <div class="col">
-                <p><small>Made with love by Codeworks</small></p>
+                <p><small>Made with power by THUNDER DAN</small></p>
             </div>
         </div>
     </footer>
