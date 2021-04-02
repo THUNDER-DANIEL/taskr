@@ -1,26 +1,22 @@
 import { ProxyState } from "../AppState.js";
 import { listsService } from "../Services/ListsService.js";
-import { TasksService } from "../Services/TasksService.js";
+import { tasksService } from "../Services/TasksService.js";
 import { loadState } from "../Utils/LocalStorage.js";
 
 
 //Private
 function _draw() {
-  let values = ProxyState.values;
+  let tasks = ProxyState.tasks;
   let template = ''
   if (tasks.length == 0) {
-    template += '<div class="col text-center"><p><em>No Work</em><p></div>'
+    template += '<div class="col text-center"><p><em>No Work fool</em><p></div>'
   }
 
-  values.forEach(v => template += v.Template)
+  tasks.forEach(v => template += v.Template)
+  document.getElementById("display_task").innerHTML = template
 
 
-  document.getElementById("app").innerHTML = /*html*/`
-  <button className="btn btn-info" onclick="app.valuesController.addValue()">Add Value</button>  
-  <div className="card-columns values">
-      ${template}
-  </div>
-  `
+
 }
 
 //Public
@@ -35,17 +31,18 @@ export default class TasksController {
   addTask() {   
     window.event.preventDefault()
     let form = window.event.target
-    let rawTask= {
+    let newTask= {
       name: form['name'].value,
       color: form['color'].value
     }
-    tasksService.addValue(rawTask)
+    console.log("TASK-Con")
+    tasksService.addTask(newTask)
     // @ts-ignore
     form.reset()
   }
 
-  deleteList(id){
-      listsService.deleteList(id)
+  deleteTask(id){
+      tasksService.deleteTask(id)
   }
 
 }

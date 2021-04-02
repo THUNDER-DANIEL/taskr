@@ -10,7 +10,9 @@ class TasksService {
 
 
   addTask(newTask){
-      ProxyState.task = [...ProxyState.tasks, new Task(newTask.name, newTask.color)]
+      console.log("TASK Service")
+      ProxyState.tasks = [...ProxyState.tasks, new Task(newTask.name, newTask.color, newTask.id)]
+      console.log(ProxyState.tasks)
   }
 }
 

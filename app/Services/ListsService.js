@@ -4,14 +4,14 @@ import { saveState } from "../Utils/LocalStorage.js";
 
 class ListsService {
   deleteList(id) {
-    ProxyState.ingredients = ProxyState.lists.filter(i => i.id != id)
+    ProxyState.lists = ProxyState.lists.filter(i => i.id != id)
     saveState()
 
   }
   addList(newIng) {
     ProxyState.lists.push(new List(newIng.name, newIng.taskId))
     saveState()
-    ProxyState.ingredients = ProxyState.lists
+    ProxyState.lists = ProxyState.lists
   }
 }
 

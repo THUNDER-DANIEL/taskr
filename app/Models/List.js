@@ -1,12 +1,12 @@
-import { generateId } from "../Utils/GenerateId.js"
+import { GenerateId } from "../Utils/GenerateId.js"
 
 export default class List {
-    constructor(id = generateId(), name, listQty) {
+    constructor(id = GenerateId(), name, taskId) {
       this.id = id
       this.name = name
-      this.listQty = 0
+      this.taskId = taskId
     }
-  
+
     get Template() {
       return `
       <li>${this.name} <i class="fas fa-times ml-2 text-danger" 
