@@ -10,8 +10,8 @@ class ListsService {
   }
   addList(newIng) {
     ProxyState.lists.push(new List(newIng.name, newIng.taskId))
-    saveState()
     ProxyState.lists = ProxyState.lists
+    saveState()
   }
 }
 

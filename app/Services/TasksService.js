@@ -13,6 +13,7 @@ class TasksService {
       console.log("TASK Service")
       ProxyState.tasks = [...ProxyState.tasks, new Task(newTask.name, newTask.color, newTask.id)]
       console.log(ProxyState.tasks)
+      saveState()
   }
 }
 

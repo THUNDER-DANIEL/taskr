@@ -11,17 +11,15 @@ export default class Task {
     }
 
 
-
-
-
+    // TODO get all list of tasks (see pizzashack toppings)
+    // TODO fliter list on to completed 
 
     get Template() {
-
         return /*html*/`
-        <div class="task-card shadow bg-white my-3 rounded">
+        <div class="task-card shadow bg-${this.color} my-3 rounded">
             <div class="text-center ${this.name} p-2 d-flex justify-content-between">
-                <h3>${this.color} ${this.id}</h3>
-                <p>${this.name}</p>
+                <h3>${this.name}</h3>
+                <p>${this.id} ${this.color}</p>
                 <button type="sumbit" onclick="app.tasksController.deleteTask('${this.id}')">Delete ${this.name}</button>
             </div>
             <div class="p-3">
