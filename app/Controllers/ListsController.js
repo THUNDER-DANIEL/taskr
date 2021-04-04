@@ -5,7 +5,7 @@ import { listsService } from "../Services/ListsService.js";
 export default class ListsController {
 
   addList(taskId) {
-      
+    console.log("ADD LIST CON")
     window.event.preventDefault()
     let form = window.event.target
     let rawIng = {
@@ -16,6 +16,9 @@ export default class ListsController {
     // @ts-ignore
     form.reset()
   }
+    // editList(id){
+    //     listsService.editList(id)
+    // }
 
   deleteList(id) {
     listsService.deleteIngredient(id)

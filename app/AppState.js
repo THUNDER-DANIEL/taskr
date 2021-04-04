@@ -9,8 +9,7 @@ class AppState extends EventEmitter {
 
     /** @type {List[]} */
     lists = []
-}
-
+  }
 
 
 

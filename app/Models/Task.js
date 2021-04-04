@@ -17,18 +17,19 @@ export default class Task {
     get Template() {
         return /*html*/`
         <div class="task-card shadow bg-${this.color} my-3 rounded">
-            <div class="text-center ${this.name} p-2 d-flex justify-content-between">
-                <h3>${this.name}</h3>
-                <p>${this.id} ${this.color}</p>
+            <div class="text-center ${this.name}p-2 d-flex justify-content-between">
+                <h4>${this.name} \ ${this.id}</h4>
                 <button type="sumbit" onclick="app.tasksController.deleteTask('${this.id}')">Delete ${this.name}</button>
             </div>
             <div class="p-3">
+            <ul>
+                ${this.Lists}
+            </ul>
             </div>
-            <form class="d-flex p-2" onsubmit="app.listsController.addList('${this.id}')">
-            <button type="sumbit" onclick="app.tasksController.deleteTask('${this.id}')">Delete ${this.name}</button>
 
-                <input type="text" name="name" id="name" class="form-control" placeholder="List Item"
-                    aria-describedby="helpId">
+            <form class="d-flex p-2" onsubmit="app.listsController.addList('${this.id}')">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Add List Item  ===>"
+                    aria-describedby="helpId" required>
                 <button type="submit" class="btn btn-success" title='add list' required> + </button>
             </form>
         </div>

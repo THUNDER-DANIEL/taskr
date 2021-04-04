@@ -1,5 +1,4 @@
 import { ProxyState } from "../AppState.js";
-import { listsService } from "../Services/ListsService.js";
 import { tasksService } from "../Services/TasksService.js";
 import { loadState } from "../Utils/LocalStorage.js";
 
@@ -9,11 +8,13 @@ function _draw() {
   let tasks = ProxyState.tasks;
   let template = ''
   if (tasks.length == 0) {
-    template += '<div class="col text-center"><p><em>No Work fool</em><p></div>'
+    template += '<div class="col text-center"><p><em>No Work</em></p></div>'
   }
 
   tasks.forEach(v => template += v.Template)
-  document.getElementById("display_task").innerHTML = template
+  document.getElementById("display_task","display_list").innerHTML = template
+
+
 
 
 
