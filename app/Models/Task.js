@@ -10,9 +10,6 @@ export default class Task {
         this.id = id
     }
 
-    // TODO get all list of tasks (see pizzashack toppings)
-    // TODO fliter list on to completed 
-
     get Template() {
         return /*html*/`
         <div class="task-card shadow bg-${this.color} my-3 rounded">
@@ -34,8 +31,6 @@ export default class Task {
         </div>
 \        `
     }
-
-
     get Lists() {
         let ings = ProxyState.lists.filter(i => i.taskId === this.id)
         let template = ''

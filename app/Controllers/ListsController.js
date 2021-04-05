@@ -25,15 +25,11 @@ export default class ListsController {
     }
   }
 
-
-  // use window.confirmed (t/f)  if statement window.confirm
   checkBx(id) {
-    console.log("CHECK BOX COntroller")
+    let count = 0
+    count = count ++;
     listsService.checkBx(id)
   }
-
-
-
 
   deleteAlert(){
     console.log("Alert")
