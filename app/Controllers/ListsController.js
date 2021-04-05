@@ -21,7 +21,9 @@ export default class ListsController {
     // }
 
   deleteList(id) {
-    listsService.deleteIngredient(id)
+    console.log("delete LIST CON")
+
+    listsService.deleteList(id)
   }
 
 }

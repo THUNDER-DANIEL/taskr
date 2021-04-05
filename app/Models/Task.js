@@ -29,7 +29,7 @@ export default class Task {
 
             <form class="d-flex p-2" onsubmit="app.listsController.addList('${this.id}')">
                 <input type="text" name="name" id="name" class="form-control" placeholder="Add List Item  ===>"
-                    aria-describedby="helpId" required>
+                    aria-describedby="helpId" required min="2" max="15" required>
                 <button type="submit" class="btn btn-success" title='add list' required> + </button>
             </form>
         </div>

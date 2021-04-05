@@ -4,8 +4,10 @@ import { saveState } from "../Utils/LocalStorage.js";
 
 class ListsService {
   deleteList(id) {
+    console.log("Delete List Service")
     ProxyState.lists = ProxyState.lists.filter(i => i.id != id)
     console.log(ProxyState.lists)
+    
     saveState()
 
   }

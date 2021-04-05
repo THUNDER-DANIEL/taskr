@@ -11,17 +11,16 @@ export default class List {
     get Template() {
         
       return `
-      
       <li>${this.name}
-      <i class="fas fa-trash-alt ml-2 text-danger"
-      onclick="app.ingredientsController.deleteList('${this.id}')"></i>
-      </li>
-
-
+      <button type="sumbit" onclick="app.listsController.deleteList('${this.id}')" text-danger>X</button>
       
+      </i>
+      </li>
       `
     }
-    // <li>${this.name} ${this.id} ${this.taskId} <i class="fas fa-times ml-2 text-danger" 
+    //   <i class="fas fa-trash-alt ml-2 text-danger"
+    //   onclick="app.ingredientsController.deleteList('${this.id}')">
+    // // <li>${this.name} ${this.id} ${this.taskId} <i class="fas fa-times ml-2 text-danger" 
     // onclick="app.listsController.deleteList('${this.id}')">Delete</i></li>
     // <a href=onclick="app.tasksController.deleteList('${this.id}')>deleter</a>
   }
