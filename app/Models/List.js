@@ -7,20 +7,19 @@ export default class List {
       this.name = name
       this.taskId = taskId
       this.id = id
+      this.completed = false
     }
-    //   this.completed = false
 
 
 
     get Template() {
       return `
       <li>
-      <input type="checkbox" onclick="app.listsController.checkBx()" id="myCheck">
+      <input type="checkbox" onclick="app.listsController.checkBx('${this.id}')" id="myCheck">
       ${this.name}
-      <p id="text" style="display:none">
-      <button type="sumbit" onclick="app.listsController.deleteList('${this.id}'), app.listsController.deleteAlert()" text-danger>Delete</button>
+      <p id="text-${this.id}" style="display:none">
+      <button type="sumbit" onclick="app.listsController.deleteList('${this.id}')" text-danger>Delete</button>
       </p>
-      
       </i>
       </li>
       `

@@ -13,16 +13,20 @@ class ListsService {
   }
 
 
-  checkBx() {
-    console.log("CHECK BOX service")
+  checkBx(id) {
+
+    console.log(id)
     var checkBox = document.getElementById("myCheck");
-    var text = document.getElementById("text");
+    var text = document.getElementById("text-"+ id);
+    let found = ProxyState.lists.find(x => x.id == id)
     
     // If the checkbox is checked, display the output text
-    if (checkBox.checked == true){
+    if (found.completed == false ){
       text.style.display = "block";
+      found.completed = true
     } else {
       text.style.display = "none";
+      found.completed = false
     }
     saveState()
   }

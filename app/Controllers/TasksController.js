@@ -15,7 +15,7 @@ function _draw() {
   document.getElementById("display_task","display_list").innerHTML = template
 
 
-
+// task.length filter if complete is t/f
 
 
 }
@@ -43,7 +43,9 @@ export default class TasksController {
   }
 
   deleteTask(id){
-      tasksService.deleteTask(id)
+      if(window.confirm("Do you really want to Delete?")){
+        tasksService.deleteTask(id)
+      }
   }
 
 }

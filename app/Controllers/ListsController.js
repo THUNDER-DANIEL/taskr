@@ -20,12 +20,16 @@ export default class ListsController {
 
   deleteList(id) {
     console.log("delete LIST CON")
-    listsService.deleteList(id)
+    if(window.confirm("Do you really want to Delete?")){
+      listsService.deleteList(id)
+    }
   }
 
-  checkBx() {
+
+  // use window.confirmed (t/f)  if statement window.confirm
+  checkBx(id) {
     console.log("CHECK BOX COntroller")
-    listsService.checkBx()
+    listsService.checkBx(id)
   }
 
 

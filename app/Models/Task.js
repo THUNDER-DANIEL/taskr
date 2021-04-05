@@ -10,7 +10,6 @@ export default class Task {
         this.id = id
     }
 
-
     // TODO get all list of tasks (see pizzashack toppings)
     // TODO fliter list on to completed 
 
