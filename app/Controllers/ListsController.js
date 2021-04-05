@@ -16,14 +16,25 @@ export default class ListsController {
     // @ts-ignore
     form.reset()
   }
-    // editList(id){
-    //     listsService.editList(id)
-    // }
+
 
   deleteList(id) {
     console.log("delete LIST CON")
-
     listsService.deleteList(id)
   }
+
+  checkBx() {
+    console.log("CHECK BOX COntroller")
+    listsService.checkBx()
+  }
+
+
+
+
+  deleteAlert(){
+    console.log("Alert")
+    listsService.deleteAlert()
+
+  } 
 
 }

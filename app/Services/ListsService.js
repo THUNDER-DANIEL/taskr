@@ -11,15 +11,34 @@ class ListsService {
     saveState()
 
   }
-//   editList(id){
-//     ProxyState.lists = ProxyState.filter(x =>i.id == id)
-//     saveState()
-//   }
+
+
+  checkBx() {
+    console.log("CHECK BOX service")
+    var checkBox = document.getElementById("myCheck");
+    var text = document.getElementById("text");
+    
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true){
+      text.style.display = "block";
+    } else {
+      text.style.display = "none";
+    }
+    saveState()
+  }
+
+
+  deleteAlert(){
+    console.log("Alert")
+    window.confirm("Do you really want to Delete?")
+
+  } 
+
 
   addList(newIng) {
-    console.log("ADD LIST SERVICE")
     ProxyState.lists.push(new List(newIng.name, newIng.taskId, newIng.id))
     ProxyState.lists = ProxyState.lists
+    console.log(ProxyState.lists)
     saveState()
   }
 }

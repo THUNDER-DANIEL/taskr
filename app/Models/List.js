@@ -1,6 +1,7 @@
 import { GenerateId } from "../Utils/GenerateId.js"
 
 // TODO add if else to return different template based on T / F
+
 export default class List {
     constructor(name, taskId, id = GenerateId()) {
       this.name = name
@@ -8,11 +9,17 @@ export default class List {
       this.id = id
     }
     //   this.completed = false
+
+
+
     get Template() {
-        
       return `
-      <li>${this.name}
-      <button type="sumbit" onclick="app.listsController.deleteList('${this.id}')" text-danger>X</button>
+      <li>
+      <input type="checkbox" onclick="app.listsController.checkBx()" id="myCheck">
+      ${this.name}
+      <p id="text" style="display:none">
+      <button type="sumbit" onclick="app.listsController.deleteList('${this.id}'), app.listsController.deleteAlert()" text-danger>Delete</button>
+      </p>
       
       </i>
       </li>

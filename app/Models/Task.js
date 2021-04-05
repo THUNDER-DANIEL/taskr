@@ -18,19 +18,19 @@ export default class Task {
         return /*html*/`
         <div class="task-card shadow bg-${this.color} my-3 rounded">
             <div class="text-center ${this.name}p-2 d-flex justify-content-between">
-                <h4>${this.name} \ ${this.id}</h4>
+                <h4>${this.name}</h4>
                 <button type="sumbit" onclick="app.tasksController.deleteTask('${this.id}')">Delete ${this.name}</button>
             </div>
-            <div class="p-3">
+            <div class="p-3 m-3">
             <ul>
                 ${this.Lists}
             </ul>
             </div>
 
             <form class="d-flex p-2" onsubmit="app.listsController.addList('${this.id}')">
-                <input type="text" name="name" id="name" class="form-control" placeholder="Add List Item  ===>"
-                    aria-describedby="helpId" required min="2" max="15" required>
-                <button type="submit" class="btn btn-success" title='add list' required> + </button>
+                <input type="text" minlength ='3' maxlength='50' name="name" id="name" class="form-control" placeholder="Add List Item  ===>"
+                    aria-describedby="helpId" required>
+                <button type="submit" class="btn btn-success" title='add list'> + </button>
             </form>
         </div>
 \        `

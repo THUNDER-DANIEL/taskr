@@ -9,10 +9,11 @@ class AppState extends EventEmitter {
 
     /** @type {List[]} */
     lists = []
+
+    count(){
+      count = ProxyState.lists.filter(i => i.id != id)
+    }
   }
-
-
-
 
 
 
